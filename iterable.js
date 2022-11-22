@@ -3,7 +3,7 @@ function createFiboIteratable(num) {
   let nextNum = 0
   let num2 = 1
   let result
-  let count = 1
+  let count = 0
 
   return {
     [Symbol.iterator]() {
@@ -17,12 +17,12 @@ function createFiboIteratable(num) {
             count += 1
             return result
           }
-          return { value: nextNum, done: true }
+          return { done: true }
         },
       }
     },
   }
 }
 
-const iter1 = createFiboIteratable(4)
+const iter1 = createFiboIteratable(7)
 console.log([...iter1])

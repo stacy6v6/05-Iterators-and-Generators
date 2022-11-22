@@ -2,7 +2,7 @@ function createFiboGenerator(num) {
   let num1 = 0
   let nextNum = 0
   let num2 = 1
-  let count = 1
+  let count = 0
 
   return function* generatorFiboFunction() {
     while (count !== num) {
@@ -12,7 +12,7 @@ function createFiboGenerator(num) {
       num2 = nextNum
       count += 1
     }
-    yield nextNum
+    return nextNum
   }
 }
 
